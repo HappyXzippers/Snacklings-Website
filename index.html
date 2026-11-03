@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snacklings Are Coming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="main-title">Snacklings Are Coming</h1>
+    <p class="tagline">Feed them. Name them. Fear them.</p>
+    <div id="countdown"></div>
+    <button id="joinBtn">Join the Ritual</button>
+  </div>
+  <div id="hover-secret">you've been chosen...</div>
+  <script src="sparkle-trail.js"></script>
+  <script src="script.js"></script>
+  <audio id="hoverSound" src="hover-sfx.mp3" preload="auto"></audio>
+  <script>
+    document.getElementById('joinBtn').addEventListener('mouseenter', () => {
+      document.getElementById('hoverSound').play();
+    });
+
+    const title = document.getElementById('main-title');
+    const hoverSecret = document.getElementById('hover-secret');
+    title.addEventListener('mouseenter', () => { hoverSecret.style.opacity = 1; });
+    title.addEventListener('mouseleave', () => { hoverSecret.style.opacity = 0; });
+  </script>
+</body>
+</html>

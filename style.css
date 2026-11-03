@@ -1,0 +1,112 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #1a1a2e, #0f0f1f);
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 3em;
+  background: linear-gradient(45deg, #ff8aff, #aaffff, #ff8aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #ff8aff; }
+  100% { text-shadow: 0 0 20px #aaffff; }
+}
+
+.tagline {
+  font-size: 1.2em;
+  color: #cfcfcf;
+  margin: 10px 0 20px;
+}
+
+#countdown {
+  font-size: 2em;
+  color: #ffd6ff;
+  margin-bottom: 20px;
+}
+
+#joinBtn {
+  background: linear-gradient(90deg, #ff8aff, #aaffff);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+#joinBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #aaffff;
+}
+
+#hover-secret {
+  position: absolute;
+  bottom: 40px;
+  font-size: 1.2em;
+  opacity: 0;
+  color: #ffb6ff;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffb6ff, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeOut 1s forwards;
+  z-index: 999;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+/* Melting neon drips at the top */
+.drip-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://i.imgur.com/RTgxaEk.png') repeat-x center top;
+  background-size: contain;
+  z-index: 1;
+}
+
+/* Snack food images around border */
+.food-deco {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.food1 { top: 10%; left: 5%; background: url('https://i.imgur.com/U1jvhv5.png') no-repeat center/contain; }
+.food2 { bottom: 15%; right: 10%; background: url('https://i.imgur.com/gGHkTOp.png') no-repeat center/contain; }
+.food3 { top: 20%; right: 5%; background: url('https://i.imgur.com/VwvFfZc.png') no-repeat center/contain; }
+.food4 { bottom: 10%; left: 10%; background: url('https://i.imgur.com/QvnShXM.png') no-repeat center/contain; }
